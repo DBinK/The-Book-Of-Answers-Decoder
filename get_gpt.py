@@ -1,3 +1,11 @@
+'''
+Author: DBinK dbinkv1@gmail.com
+Date: 2023-08-31 10:54:19
+LastEditors: DBinK dbinkv1@gmail.com
+LastEditTime: 2023-09-02 00:30:07
+FilePath: /The-Book-of-Answers-Interpreter/get_gpt.py
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
 import openai
 import os
 import random_answer
@@ -8,12 +16,14 @@ System_Prompt = """《The Book of Answers》又名 答案之书，这本书是�
 
 这本书的原理是通过使用随机性和人类心理的倾向来给出答案。当我们面对不确定的情况时，我们常常希望得到一个明确的答案。而这本书提供了一种娱乐性的方式来满足这种需求。尽管它并不能真正预测未来或提供准确的答案，但它可以帮助我们放松心情，从不同的角度思考问题，并激发我们自己的直觉和创造力。
 
-我现在需要你扮演一名占卜师，去解读我向答案之书提出问题后 <答案之书显现的回答>，告诉我更具体的行动。不用向我解释这本书，你只需要告诉我接下来该怎么做。回答尽可能简短。"""
+我现在需要你扮演一名占卜师，去解读我向答案之书提出问题后 <答案之书显现的回答>，告诉我更具体的行动。不用向我解释这本书，你只需要告诉我接下来该怎么做。"""
 
 def openai_response(question):
     "传入问题，获得GPT的回答"
 
     answer = random_answer.get_answer()  #答案之书的答案
+    
+    print(answer)
     
     User_Prompt = f"我向答案之书提出的问题：\n{question} \n答案之书显现的回答: \n{answer}"
 
