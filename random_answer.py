@@ -22,11 +22,15 @@ def get_answer():
         for line_number, row in enumerate(reader, start=1):
             if line_number == random_line_number:
                 page, en, zh = row[:3] 
+                answer = f"n{en}\n{zh}"
+
+                #print(answer)
                 #print(f"页数：{page}\n{en}\n{zh}")
-                print(f"页数{page}")
-                print(en)
-                print(zh)
+                #print(f"页数{page}")
+                #print(en)
+                #print(zh)
                 break
-    
-get_answer()
+    return answer
+
+# get_answer()
 
